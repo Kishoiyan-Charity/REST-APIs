@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import compression from 'compression';
 import cors from 'cors'
 import mongoose from 'mongoose';
+import {authRouter} from "./router/authentication";
 
 const app = express();
 
@@ -18,8 +19,8 @@ app.use(cookieParser());
 
 const server = http.createServer(app)
 
-server.listen(8080, () => {
-    console.log('Server listening on http://localhost:8080');
+server.listen(5054, () => {
+    console.log('Server listening on http://localhost:5054');
 });
 
 const MONGO_URL = 'mongodb+srv://kish:kish@cluster0.8md9kgx.mongodb.net/?appName=Cluster0';
@@ -32,4 +33,4 @@ mongoose.connect(MONGO_URL)
 mongoose.connection.on('error', (error: Error) => console.log(error))
 
 
-
+app.use('/', authRouter);
