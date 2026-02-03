@@ -6,6 +6,7 @@ import compression from 'compression';
 import cors from 'cors'
 import mongoose from 'mongoose';
 import {authRouter} from "./router/authentication";
+import {userRouter} from "./router/users";
 
 const app = express();
 
@@ -34,3 +35,4 @@ mongoose.connection.on('error', (error: Error) => console.log(error))
 
 
 app.use('/', authRouter);
+app.use('/', userRouter);
