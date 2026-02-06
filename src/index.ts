@@ -24,7 +24,9 @@ server.listen(5054, () => {
     console.log('Server listening on http://localhost:5054');
 });
 
-const MONGO_URL = 'mongodb+srv://kish:kish@cluster0.8md9kgx.mongodb.net/?appName=Cluster0';
+const MONGO_URL ='mongodb+srv://kish:kish@cluster0.8md9kgx.mongodb.net/?appName=Cluster0';
+
+
 
 mongoose.Promise= Promise;
 // mongoose.connect(MONGO_URL);
